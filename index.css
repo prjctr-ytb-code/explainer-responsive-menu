@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+.menu {
+    overflow: hidden;
+    background-color: #FFC15C;
+    position: relative;
+}
+
+.menu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu__item {
+    font-family: 'PT Mono', monospace;
+    font-weight: 400;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 39px;
+}
+
+.menu__item-link {
+    color: #272931;
+    text-decoration: none;
+}
+
+.menu__open-button {
+    display: none;
+    margin: 14px 16px;
+    background-color: transparent;
+    border: none;
+}
+
+@media screen and (max-width: 600px) {
+    .menu__item {
+        display: none;
+    }
+
+    .menu__item_active {
+        display: block;
+    }
+
+    .menu__open-button {
+        float: right;
+        display: block;
+        width: 60px;
+        height: 45px;
+        position: relative;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+
+    .menu_opened .menu__open-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .menu_opened .menu__item {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .menu_opened .menu__item_active {
+        text-decoration: underline;
+    }
+
+    /* icon start */
+    .menu__open-button-item {
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background: #272931;
+        border-radius: 5px;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+    }
+
+    .menu__open-button-item:nth-child(1) {
+        top: 0;
+    }
+
+    .menu__open-button-item:nth-child(2),
+    .menu__open-button-item:nth-child(3) {
+        top: 18px;
+    }
+
+    .menu__open-button-item:nth-child(4) {
+        top: 36px;
+    }
+
+    .menu_opened .menu__open-button-item:nth-child(1) {
+        top: 18px;
+        width: 0;
+        left: 50%;
+    }
+
+    .menu_opened .menu__open-button-item:nth-child(2) {
+        transform: rotate(45deg);
+    }
+
+    .menu_opened .menu__open-button-item:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+
+    .menu_opened .menu__open-button-item:nth-child(4) {
+        top: 18px;
+        width: 0;
+        left: 50%;
+    }
+    /* icon end */
+}
